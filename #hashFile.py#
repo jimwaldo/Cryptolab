@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+'''
+Created on Oct 15, 2014
+Converted to python 3 July 26, 2018
+
+@author: waldo
+'''
+import hashlib
+
+def get_file_data():
+    fname = input('Enter the name of the file to hash : ')
+    fin = open(fname, 'r')
+    ret_data = fin.read()
+    return ret_data
+
+if __name__ == '__main__':
+    data = get_file_data()
+    hash = hashlib.new('MD5')
+    for l in data:
+        hash.update(bytes(l, 'utf8'))
+    print(hash.hexdigest())

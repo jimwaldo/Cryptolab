@@ -1,0 +1,59 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;\csgray\c100000;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Script for Crypto lab\
+\
+Begin by generating a pair of keys:\
+\
+python genKey.py \
+\
+This will ask for your name, and generate two files:\
+namekey.pem\
+namekpubkey.pem\
+\
+The first is a private key (an RSA 2048 bit key). These are textual encodings of the keys.\
+\
+Next, we will fingerprint some text (or hash them). Run the program\
+\
+python hashText.py\
+\
+This will ask for some text, which you can enter, and then will hash the text and print that out (the hash is the SHA256 hash). Try running the program again, but enter in some other text that differs by just a character, or by a lot (or both), and look at the fingerprints.\
+\
+You can do the same thing for an entire file. Copy a file into the directory you are in, and then run\
+\
+python hashFile.py\
+\
+which will ask for a file to hash. Enter the name of the file you copied, and you will get a hash for that file. Again, change a single character in the file, and run the program again. \
+clear\
+\
+Hacker challenge\'97 write a program that will run over all of the files on your disk, fingerprinting them all. How long does it take? Are there any collisions? \
+\
+Text verification\
+\
+Now we will do a crytographic verification. Run the program\
+\
+python signText.py\
+\
+it will ask for the name of the file containing your private key (use the one you generated), some text, and the name of a file that will store the verification code. \
+\
+Next, you can verify the text, using\
+\
+python verifyText.py\
+\
+it will ask for a public key (the other one you generated), some text, and the file with the verification code. If you type in the same text, it will print True; otherwise false.\
+\
+This is only somewhat interesting. Send an email to someone else in the class with your public key. Now generate a verification code for some text. Send the verification code to the same person. Now send them the text. They should be able, using your public key, to verify that the text you sent was the same as the text your verified.\
+\
+You can do this with a file, as well (but only short ones) using\
+\
+python signFile.py\
+\
+which will ask for your private key, the name of a file, and the name of a file in which to write the verification. The file can\'92t be very long (thank you, pycrypto). You can send the file to a friend (or do this yourself) along with the verification code, and verify using\
+\
+python verifyFile.py\
+\
+Note: the encrypt and decrypt for files and text doesn\'92t work. }

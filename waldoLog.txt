@@ -1,0 +1,24 @@
+Notes
+
+2018/07/26: Converting all of the files to python 3. Note that python 3 has an
+incomplete crypto library, so it isn't clear that it can do much more than
+sign and hash files. Will convert all files to python 3 syntax and libraries,
+but some may not be able to run.
+
+decryptFile.py: converted to 3, but can't be tested since encryptFile.py 
+won't run.
+decryptText.py: converted to 3, but can't be tested since encryptText.py won't run
+encryptText.py: converted to 3, but won't run because RSA key format is not
+    supported
+encryptFile.py: converted to 3, but won't run because RSA key format is not
+    supported
+findZeroHash.py: converted to 3, runs
+genKey.py: converted to 3, runs; might want to change from RSA if some other
+    form of key is supported in python 3
+hashText.py: converted to 3, runs
+hashFile.py: converted to 3, runs
+hashDict.py: converted to 3, runs
+signFile.py: Converted to 3, but RSA key is not supported
+verifyFile.py: Converted to 3, but RSA key is not supported
+verifyText.py: Converted to 3, but RSA key is not supported
+    
